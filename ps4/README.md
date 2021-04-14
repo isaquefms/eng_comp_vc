@@ -72,4 +72,44 @@ determinado ponto onde essas modificações não são significativas.
 
 ## Questão 2
 
+Na segunda questão, foi solicitado que alterássemos os parâmetros da função `pyrMeanSheftFiltering` para entendimento e
+consolidação do conteúdo de segmentação de imagens utilizando a abordagem do `Mean Shift`.
 
+Todas as imagens resultantes dessas modificações podem ser conferidas no diretório `ps4/result_images`, onde os nomes
+representam os parâmetros `sp`, `sr` e `L` utilizados para produzir a imagem. Por exemplo, a imagem com o nome
+`lenna_12_19_1` foi a imagem produzida utilizando como base a imagem da `lenna` e os parâmetros `sp=12`, `sr=19` e `L=1`
+.
+
+### Parâmetro SP
+
+Para este parâmetro, o seu aumentou representou um custo computacional maior. O que era esperado, uma vez que ele
+representa o tamanho das janelas do espaço de features da imagem. O seu crescimento também mostrou um crescimento nas
+regiões segmentadas, trazendo um efeito bem próximo de uma pintura a óleo.
+
+### Parâmetro SR
+
+Esse parâmetro está relacionado com a abrangência de cores captadas por uma janela de segmentação, de modo que, o seu
+crescimento representa uma diminuição nas cores que compõem a imagem. Isso foi atestado nos testes, uma vez que 
+aumentando o parâmetro foi possível perceber que maiores regiões eram aproximadas dado que a abrangência de tons foi
+aumentada. 
+
+### Parâmetro L
+
+Tal parâmetro está relacionado com a quantidade de níveis da pirâmide da imagem e, acredita-se que a função utiliza a 
+imagem no topo da pirâmide. Esse uso, faz com que maiores níveis utilizados gerem imagens que já são aproximações de 
+uma imagem base, ampliando efeitos de pixelagem na imagem. Uma das imagens de exemplo, quando teve seu `L` igual a 6, 
+apresentou efeitos de brusca perda de detalhes na borda e próximo ao chapéu da personagem.
+
+### O Caso da Imagem Spring
+
+Nessa imagem, a segmentação se torna um objetivo bem mais complexo do que o esperado, uma vez que há grandes variações 
+de tons em contantes blocos, ou janelas, da imagem. Isso faz com que a complexidade da aproximação seja aumentada 
+dificultando a identificação de segmentos, ou criando diversos segmentos pequenos.
+
+![Segmentação da Spring](result_imgs/spring_25_25_1.png)
+
+## Questão 3
+
+
+
+https://opencv-python-tutroals.readthedocs.io/en/latest/py_tutorials/py_imgproc/py_houghlines/py_houghlines.html
