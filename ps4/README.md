@@ -110,6 +110,29 @@ dificultando a identificação de segmentos, ou criando diversos segmentos peque
 
 ## Questão 3
 
+A questão 3 solicitava a utilização de um método de detecção de linhas para a identificação de cantos em imagens 
+normalmente utilizadas na calibração de câmeras. Utilizamos o método `HoughLinesP` na detecção de linhas e os seguintes
+resultados foram obtidos:
 
+![Linhas na Imagem de Calibração 1](result_imgs/lines_image_11.png)
 
-https://opencv-python-tutroals.readthedocs.io/en/latest/py_tutorials/py_imgproc/py_houghlines/py_houghlines.html
+![Linhas na Imagem de Calibração 2](result_imgs/lines_image_15.png)
+
+A partir das imagens e dos conhecimentos obtidos em aula, podemos perceber que a detecção de cantos/quinas é afetada 
+pela distorção radial das lentes, uma vez que, como pode-se perceber, a aproximação do objeto fez com que as bordas não
+fossem detectadas linearmente, como de fato o são, mas fez com que as mesmas fossem registradas como uma curva 
+necessitando que mais de uma linha fosse traçada para delimitar uma mesma borda do objeto. Em termos gerais, quanto 
+maior a aproximação do objeto da câmera, maior o efeito da distorção na imagem. 
+
+## Referências
+
+- https://opencv-python-tutroals.readthedocs.io/en/latest/py_tutorials/py_imgproc/py_houghlines/py_houghlines.html
+- https://www.youtube.com/watch?v=DkYpi8_AyoI&t=2s
+
+## Obs:
+
+Qualquer questão pode ser facilmente testada executando o seguinte comando no diretório `ps4`:
+
+```bash
+python main.py
+```

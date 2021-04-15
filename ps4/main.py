@@ -5,17 +5,17 @@ from detection_calibration_marks import DetectionCalibrationMarks
 
 def main():
     # questão 1
-    # video = HornSchunck('../videos/taxi.mpg', 0.1, 40)
-    # video.horn_schunck()
-    # video.show_velocities()
+    video = HornSchunck('../videos/taxi.mpg', 0.1, 40)
+    video.horn_schunck()
+    video.show_velocities()
 
     # questão 2
     # mean_shift = MeanShift('../imgs/spring.png')
     # mean_shift.mean_shift()
 
     # questão 3
-    dcm = DetectionCalibrationMarks('../imgs/Image5.tif')
-    dcm.detect_lines()
+    # dcm = DetectionCalibrationMarks('../imgs/Image15.tif')
+    # dcm.detect_lines()
 
 
 main()

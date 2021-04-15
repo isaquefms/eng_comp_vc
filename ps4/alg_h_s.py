@@ -87,7 +87,7 @@ class HornSchunck:
         self._v = v
         HornSchunck._show_image(self._u, 'Vetor U')
         HornSchunck._show_image(self._v, 'Vetor V')
-        # self._show_image_hsv(self._u, self._v, 'HSV Image')
+        self._show_image_hsv(self._u, self._v, 'HSV Image')
 
     def _show_velocities(self) -> None:
         """Exibe o gráfico das velocidades calculando os vetores tendo como base cada pixel.
@@ -100,8 +100,8 @@ class HornSchunck:
         v = self._v
 
         fig, ax = plt.subplots()
-        q = ax.quiver(x, y, u, v)
-        ax.quiverkey(q, X=0.5, Y=1.1, U=1, label='Velocidade', labelpos='E')
+        q = ax.quiver(x, y, v, u)
+        ax.quiverkey(q, X=0.5, Y=1.1, U=10, label='Velocidade', labelpos='E')
         plt.show()
 
     def _show_image_hsv(self, u: np.ndarray, v: np.ndarray, image_name: str) -> None:

@@ -22,7 +22,7 @@ class DetectionCalibrationMarks:
         max_line_gap = 10
         lines = cv.HoughLinesP(edges, 1, np.pi/180, 50, None, minLineLength=min_line_length, maxLineGap=max_line_gap)
         if lines is not None:
-            for i in range(0, len(lines)):
+            for i in range(len(lines)):
                 l = lines[i][0]
                 cv.line(self._image, (l[0], l[1]), (l[2], l[3]), (0, 255, 0), 3, cv.LINE_AA)
         cv.imshow('Lines', self._image)
